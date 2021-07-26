@@ -1,6 +1,8 @@
 import re
 import time
 import os
+
+from dotenv import load_dotenv
 from telegram import ChatAction
 from telegram.ext import run_async
 from boi import updater, browser
@@ -12,8 +14,9 @@ import logging
 
 JOIN_AFTER_PEOPLE = 1
 
+load_dotenv()
 
-userId = ""
+userId = os.getenv("USERID")
 
 
 def num_in_string(inputString):

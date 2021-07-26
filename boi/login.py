@@ -3,10 +3,12 @@ from boi import dp, browser
 from telegram.ext import run_async
 from telegram import ChatAction
 import os
+
+from dotenv import load_dotenv
 import time
 
-
-userId = -587495317
+load_dotenv()
+userId = os.getenv("USERID")
 
 
 @run_async
@@ -42,11 +44,11 @@ def login(update, context):
 
     browser.get('https://apps.google.com/meet/')
 
-    browser.save_screenshot("ss.png")
-    context.bot.send_chat_action(
-        chat_id=userId, action=ChatAction.UPLOAD_PHOTO)
-    pic = context.bot.send_photo(chat_id=userId, photo=open(
-        'ss.png', 'rb'), timeout=120).message_id
-    os.remove('ss.png')
-
+    # browser.save_screenshot("ss.png")
+    # context.bot.send_chat_action(
+    #     chat_id=userId, action=ChatAction.UPLOAD_PHOTO)
+    # pic = context.bot.send_photo(chat_id=userId, photo=open(
+    #     'ss.png', 'rb'), timeout=120).message_id
+    # os.remove('ss.png')
+    context.bot.send_chat_action(chat_id=userId, action=ChatAction.TYPING)
     context.bot.send_message(chat_id=userId, text="Logged In!")
