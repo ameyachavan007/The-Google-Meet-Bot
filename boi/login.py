@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 import time
 
 load_dotenv()
-userId = os.getenv("USERID")
+userId = -587495317
 
 
 @run_async
@@ -20,11 +20,9 @@ def login(update, context):
 
     browser.get("https://stackoverflow.com/users/login")
     time.sleep(2)
-    print("ran till here........")
     signinw_field = browser.find_element_by_xpath(
         "/html/body/div[3]/div[2]/div/div[2]/button[1]")
     signinw_field.click()
-    print("clicked........")
     time.sleep(2)
     email_field = browser.find_element_by_xpath(
         "/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input")
@@ -44,11 +42,5 @@ def login(update, context):
 
     browser.get('https://apps.google.com/meet/')
 
-    # browser.save_screenshot("ss.png")
-    # context.bot.send_chat_action(
-    #     chat_id=userId, action=ChatAction.UPLOAD_PHOTO)
-    # pic = context.bot.send_photo(chat_id=userId, photo=open(
-    #     'ss.png', 'rb'), timeout=120).message_id
-    # os.remove('ss.png')
     context.bot.send_chat_action(chat_id=userId, action=ChatAction.TYPING)
     context.bot.send_message(chat_id=userId, text="Logged In!")

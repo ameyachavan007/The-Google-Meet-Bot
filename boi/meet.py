@@ -12,11 +12,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 import logging
 
 
-JOIN_AFTER_PEOPLE = 1
+JOIN_AFTER_PEOPLE = 10
 
 load_dotenv()
 
-userId = os.getenv("USERID")
+userId = -587495317
 
 
 def num_in_string(inputString):

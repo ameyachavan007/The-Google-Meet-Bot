@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-userId = os.getenv("USERID")
+userId = -587495317
 
 
 @run_async
