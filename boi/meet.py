@@ -16,7 +16,7 @@ JOIN_AFTER_PEOPLE = 10
 
 load_dotenv()
 
-userId = -587495317
+userId = os.getenv("USERID")
 
 
 def num_in_string(inputString):

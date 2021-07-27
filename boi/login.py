@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 import time
 
 load_dotenv()
-userId = -587495317
+userId = os.getenv("USERID")
 
 
 @run_async
@@ -20,9 +20,11 @@ def login(update, context):
 
     browser.get("https://stackoverflow.com/users/login")
     time.sleep(2)
+
     signinw_field = browser.find_element_by_xpath(
         "/html/body/div[3]/div[2]/div/div[2]/button[1]")
     signinw_field.click()
+
     time.sleep(2)
     email_field = browser.find_element_by_xpath(
         "/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input")
